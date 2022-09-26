@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" type="text/css" href="styles.css">
+    <title>Clase 12</title>
+    <script>
+        function verHora(){
+            var mihora = new Date();
+            var hrs = mihora.getHours().toString();
+            var min = mihora.getMinutes().toString();
+            if(min.length == 1) min = "0" + min;
+            var seg = mihora.getSeconds().toString();
+            if(seg.length == 1) seg = "0" + seg;
+            document.forms[0].reloj.value = hrs + ":" + min + ":" + seg;
+        }
+
+    </script>
+
+    <style>
+        #box{
+            position: absolute;
+            top: 40%;
+            right: 20%;
+            bottom: 40%;
+            left: 20%;
+        }
+
+        #visor{
+            top: 40%;
+            right: 20%;
+            bottom: 40%;
+            left: 20%;
+            font-size: 120px;
+            text-align: center;
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <form>
+            <p id="reloj">
+                <input id="visor" type="text" size="10" name="reloj">
+            </p>
+        </form>
+    </div>
+
+    <script>
+        var r = setInterval("verHora()", 500);
+    </script>
+</body>
+</html>
